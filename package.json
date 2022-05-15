@@ -1,7 +1,6 @@
 {
   "name": "sampleapp",
   "version": "0.1.0",
-  "homepage": "sioteyu.github.io",
   "private": true,
   "dependencies": {
     "-": "^0.0.1",
