@@ -12,6 +12,33 @@ const compactMotion = window.matchMedia('(max-width: 720px)').matches;
 
 root.classList.add('js');
 
+async function loadWorldSprite() {
+  const base = './public/assets-src/worlds-sprite.avif.part';
+  const parts = await Promise.all(['000', '001', '002'].map(async suffix => {
+    const response = await fetch(`${base}${suffix}`, { cache: 'force-cache' });
+    if (!response.ok) throw new Error(`World asset ${suffix} returned ${response.status}`);
+    return (await response.text()).trim();
+  }));
+
+  const binary = atob(parts.join(''));
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
+
+  const objectUrl = URL.createObjectURL(new Blob([bytes], { type: 'image/avif' }));
+  const probe = new Image();
+  probe.src = objectUrl;
+  await probe.decode();
+  root.style.setProperty('--world-sprite', `url("${objectUrl}")`);
+  root.classList.add('sprite-ready');
+  return objectUrl;
+}
+
+const spriteReady = loadWorldSprite().catch(error => {
+  console.warn('The cinematic world sprite could not load; gradient fallback remains active.', error);
+  root.classList.add('sprite-fallback');
+  return null;
+});
+
 function makeDust(container, count) {
   const fragment = document.createDocumentFragment();
   for (let i = 0; i < count; i += 1) {
@@ -151,7 +178,8 @@ async function loadAnime() {
 }
 
 if (!reduceMotion) {
-  loadAnime().then(({ animate, createTimeline, onScroll, stagger }) => {
+  Promise.all([spriteReady, loadAnime()]).then(([, anime]) => {
+    const { animate, createTimeline, onScroll, stagger } = anime;
     createTimeline({ defaults: { ease: 'outExpo' } })
       .add('.site-brand', { opacity: [0, 1], y: [-14, 0], duration: 900 })
       .add('.top-nav a, .sound-toggle', { opacity: [0, 1], y: [-10, 0], delay: stagger(75), duration: 700 }, '-=650')
