@@ -12,15 +12,14 @@
   <meta property="og:title" content="Elsewhere — An Anime.js Parallax Story" />
   <meta property="og:description" content="Follow one traveler through five impossible worlds in a cinematic, scroll-driven experience." />
   <meta property="og:url" content="https://sioteyu.github.io/elsewhere/" />
-  <meta property="og:image" content="https://sioteyu.github.io/elsewhere/public/assets/hero.avif" />
+  <meta property="og:image" content="https://sioteyu.github.io/elsewhere/public/assets/worlds-sprite.avif" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Elsewhere — An Anime.js Parallax Story</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preload" as="image" href="./public/assets/hero.avif" fetchpriority="high" />
-  <link rel="preload" as="image" href="./public/assets/hero-ambient.avif" />
+  <link rel="preload" as="image" href="./public/assets/worlds-sprite.avif" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="icon" href="./public/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
@@ -31,82 +30,33 @@
 
   <main class="app-shell">
     <header class="topbar">
-      <a class="site-brand" href="#origin" aria-label="Elsewhere, return to the beginning">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
-        ELSEWHERE
-      </a>
-      <nav class="top-nav" aria-label="Primary navigation">
-        <a href="#awakening">Story</a>
-        <a href="#realms">Worlds</a>
-        <a href="#future">Finale</a>
-      </nav>
-      <button class="sound-toggle" aria-label="Enable ambient sound" type="button">
-        <svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Zm5 4 5 5m0-5-5 5" /></svg>
-        <svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Zm4 3a5 5 0 0 1 0 8m3-11a9 9 0 0 1 0 14" /></svg>
-        <span>Sound off</span>
-      </button>
+      <a class="site-brand" href="#origin" aria-label="Elsewhere, return to the beginning"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>ELSEWHERE</a>
+      <nav class="top-nav" aria-label="Primary navigation"><a href="#awakening">Story</a><a href="#realms">Worlds</a><a href="#future">Finale</a></nav>
+      <button class="sound-toggle" aria-label="Enable ambient sound" type="button"><svg class="sound-off" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Zm5 4 5 5m0-5-5 5" /></svg><svg class="sound-on" viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H2v6h4l5 4V5Zm4 3a5 5 0 0 1 0 8m3-11a9 9 0 0 1 0 14" /></svg><span>Sound off</span></button>
     </header>
 
-    <aside class="journey-rail" aria-label="Story chapters">
-      <div class="rail-track" aria-hidden="true"><span></span></div>
-      <a href="#origin" class="active" aria-current="step"><span>00</span><small>Origin</small></a>
-      <a href="#awakening"><span>01</span><small>Awakening</small></a>
-      <a href="#realms"><span>02</span><small>Crossing</small></a>
-      <a href="#tomorrow"><span>03</span><small>Tomorrow</small></a>
-      <a href="#future"><span>04</span><small>Beyond</small></a>
-    </aside>
-
+    <aside class="journey-rail" aria-label="Story chapters"><div class="rail-track" aria-hidden="true"><span></span></div><a href="#origin" class="active" aria-current="step"><span>00</span><small>Origin</small></a><a href="#awakening"><span>01</span><small>Awakening</small></a><a href="#realms"><span>02</span><small>Crossing</small></a><a href="#tomorrow"><span>03</span><small>Tomorrow</small></a><a href="#future"><span>04</span><small>Beyond</small></a></aside>
     <div class="progress-dots" aria-hidden="true"><span class="active"></span><span></span><span></span><span></span><span></span></div>
     <div class="ambient-status" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12v.01M8 9v6m4-9v12m4-9v6m4-3v.01" /></svg><span>Scroll to shape the story</span></div>
 
-    <section id="origin" class="chapter chapter-0 is-active" style="--accent:#b38cff;--ambient:url('./public/assets/hero-ambient.avif')" data-chapter="0" data-label="Origin">
-      <div class="chapter-ambient" aria-hidden="true"></div>
-      <div class="chapter-grid">
-        <div class="chapter-copy">
-          <span class="chapter-number">00</span>
-          <p class="chapter-eyebrow">A journey beyond the familiar</p>
-          <h1 class="chapter-title">The world is larger<br />than the one you know.</h1>
-          <p class="chapter-body">A traveler wakes beneath a second moon, carrying only a compass that points toward impossible places.</p>
-          <a class="story-link primary-link" href="#awakening">Begin the journey <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a>
-        </div>
-        <div class="scene">
-          <div class="scene-frame">
-            <img class="scene-image" src="./public/assets/hero.avif" width="594" height="470" fetchpriority="high" decoding="async" alt="A lone traveler facing a luminous moon and a distant floating kingdom." />
-            <div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div>
-            <div class="scene-caption" aria-hidden="true"><span>00</span><small>Origin</small></div>
-          </div>
-        </div>
-      </div>
-      <div class="chapter-line" aria-hidden="true"></div>
+    <section id="origin" class="chapter chapter-0 is-active" data-chapter="0" data-label="Origin" style="--accent:#b38cff;--scene-pos:0%">
+      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid"><div class="chapter-copy"><span class="chapter-number">00</span><p class="chapter-eyebrow">A journey beyond the familiar</p><h1 class="chapter-title">The world is larger<br />than the one you know.</h1><p class="chapter-body">A traveler wakes beneath a second moon, carrying only a compass that points toward impossible places.</p><a class="story-link primary-link" href="#awakening">Begin the journey <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div><div class="scene"><div class="scene-frame"><div class="scene-image" role="img" aria-label="A lone traveler facing a luminous moon and a distant floating kingdom."></div><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>00</span><small>Origin</small></div></div></div></div><div class="chapter-line" aria-hidden="true"></div>
     </section>
 
-    <section id="awakening" class="chapter chapter-1" style="--accent:#77e6ce;--ambient:url('./public/assets/awakening-ambient.avif')" data-chapter="1" data-label="Awakening">
-      <div class="chapter-ambient" aria-hidden="true"></div>
-      <div class="chapter-grid">
-        <div class="chapter-copy"><span class="chapter-number">01</span><p class="chapter-eyebrow">The first signal</p><h2 class="chapter-title">Something in the forest<br />remembers your name.</h2><p class="chapter-body">Light gathers between the trees. The path does not open for the brave—it opens for the curious.</p><a class="story-link" href="#realms">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
-        <div class="scene"><div class="scene-frame"><img class="scene-image" src="./public/assets/awakening.avif" width="764" height="295" loading="lazy" decoding="async" alt="The traveler meeting a radiant white stag in an enchanted forest." /><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>01</span><small>Awakening</small></div></div></div>
-      </div><div class="chapter-line" aria-hidden="true"></div>
+    <section id="awakening" class="chapter chapter-1" data-chapter="1" data-label="Awakening" style="--accent:#77e6ce;--scene-pos:25%">
+      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid"><div class="chapter-copy"><span class="chapter-number">01</span><p class="chapter-eyebrow">The first signal</p><h2 class="chapter-title">Something in the forest<br />remembers your name.</h2><p class="chapter-body">Light gathers between the trees. The path does not open for the brave—it opens for the curious.</p><a class="story-link" href="#realms">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div><div class="scene"><div class="scene-frame"><div class="scene-image" role="img" aria-label="The traveler meeting a radiant white stag in an enchanted forest."></div><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>01</span><small>Awakening</small></div></div></div></div><div class="chapter-line" aria-hidden="true"></div>
     </section>
 
-    <section id="realms" class="chapter chapter-2" style="--accent:#ffad66;--ambient:url('./public/assets/realms-ambient.avif')" data-chapter="2" data-label="Crossing">
-      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid">
-        <div class="chapter-copy"><span class="chapter-number">02</span><p class="chapter-eyebrow">Across the realms</p><h2 class="chapter-title">Every horizon asks<br />a different question.</h2><p class="chapter-body">The bridge sways above a sleeping kingdom. Beyond it, old mountains trade secrets with the sun.</p><a class="story-link" href="#tomorrow">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
-        <div class="scene"><div class="scene-frame"><img class="scene-image" src="./public/assets/realms.avif" width="774" height="285" loading="lazy" decoding="async" alt="The traveler crossing a suspended bridge toward a mountain kingdom at sunset." /><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>02</span><small>Crossing</small></div></div></div>
-      </div><div class="chapter-line" aria-hidden="true"></div>
+    <section id="realms" class="chapter chapter-2" data-chapter="2" data-label="Crossing" style="--accent:#ffad66;--scene-pos:50%">
+      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid"><div class="chapter-copy"><span class="chapter-number">02</span><p class="chapter-eyebrow">Across the realms</p><h2 class="chapter-title">Every horizon asks<br />a different question.</h2><p class="chapter-body">The bridge sways above a sleeping kingdom. Beyond it, old mountains trade secrets with the sun.</p><a class="story-link" href="#tomorrow">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div><div class="scene"><div class="scene-frame"><div class="scene-image" role="img" aria-label="The traveler crossing a suspended bridge toward a mountain kingdom at sunset."></div><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>02</span><small>Crossing</small></div></div></div></div><div class="chapter-line" aria-hidden="true"></div>
     </section>
 
-    <section id="tomorrow" class="chapter chapter-3" style="--accent:#ec6fff;--ambient:url('./public/assets/tomorrow-ambient.avif')" data-chapter="3" data-label="Tomorrow">
-      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid">
-        <div class="chapter-copy"><span class="chapter-number">03</span><p class="chapter-eyebrow">Echoes of tomorrow</p><h2 class="chapter-title">The future is not ahead.<br />It is listening.</h2><p class="chapter-body">In the electric city, every choice leaves a reflection. The traveler finally sees who has been following.</p><a class="story-link" href="#future">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div>
-        <div class="scene"><div class="scene-frame"><img class="scene-image" src="./public/assets/tomorrow.avif" width="774" height="265" loading="lazy" decoding="async" alt="The traveler standing before a neon city reflected in rain." /><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>03</span><small>Tomorrow</small></div></div></div>
-      </div><div class="chapter-line" aria-hidden="true"></div>
+    <section id="tomorrow" class="chapter chapter-3" data-chapter="3" data-label="Tomorrow" style="--accent:#ec6fff;--scene-pos:75%">
+      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid"><div class="chapter-copy"><span class="chapter-number">03</span><p class="chapter-eyebrow">Echoes of tomorrow</p><h2 class="chapter-title">The future is not ahead.<br />It is listening.</h2><p class="chapter-body">In the electric city, every choice leaves a reflection. The traveler finally sees who has been following.</p><a class="story-link" href="#future">Continue <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m-6-6 6 6 6-6" /></svg></a></div><div class="scene"><div class="scene-frame"><div class="scene-image" role="img" aria-label="The traveler standing before a neon city reflected in rain."></div><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>03</span><small>Tomorrow</small></div></div></div></div><div class="chapter-line" aria-hidden="true"></div>
     </section>
 
-    <section id="future" class="chapter chapter-4" style="--accent:#a58cff;--ambient:url('./public/assets/future-ambient.avif')" data-chapter="4" data-label="Beyond">
-      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid">
-        <div class="chapter-copy"><span class="chapter-number">04</span><p class="chapter-eyebrow">The unfinished page</p><h2 class="chapter-title">The final portal opens<br />from your side.</h2><p class="chapter-body">The compass was never showing a destination. It was waiting for a decision.</p><a class="story-link primary-link" href="#origin">Begin again <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10" /></svg></a></div>
-        <div class="scene"><div class="scene-frame"><img class="scene-image" src="./public/assets/future.avif" width="779" height="301" loading="lazy" decoding="async" alt="The traveler facing a violet spiral galaxy from the edge of a dark world." /><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>04</span><small>Beyond</small></div></div></div>
-      </div><div class="chapter-line" aria-hidden="true"></div>
+    <section id="future" class="chapter chapter-4" data-chapter="4" data-label="Beyond" style="--accent:#a58cff;--scene-pos:100%">
+      <div class="chapter-ambient" aria-hidden="true"></div><div class="chapter-grid"><div class="chapter-copy"><span class="chapter-number">04</span><p class="chapter-eyebrow">The unfinished page</p><h2 class="chapter-title">The final portal opens<br />from your side.</h2><p class="chapter-body">The compass was never showing a destination. It was waiting for a decision.</p><a class="story-link primary-link" href="#origin">Begin again <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 17 10-10M7 7h10v10" /></svg></a></div><div class="scene"><div class="scene-frame"><div class="scene-image" role="img" aria-label="The traveler facing a violet spiral galaxy from the edge of a dark world."></div><div class="scene-light" aria-hidden="true"></div><div class="scene-vignette" aria-hidden="true"></div><div class="scene-orbit orbit-one" aria-hidden="true"></div><div class="scene-orbit orbit-two" aria-hidden="true"></div><div class="dust" aria-hidden="true"></div><div class="scene-caption" aria-hidden="true"><span>04</span><small>Beyond</small></div></div></div></div><div class="chapter-line" aria-hidden="true"></div>
     </section>
 
     <footer class="footer"><p>Built as an original parallax story with Anime.js.</p><span>Concept &amp; implementation · 2026</span></footer>
