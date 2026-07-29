@@ -12,17 +12,19 @@
   <meta property="og:title" content="Elsewhere — An Anime.js Parallax Story" />
   <meta property="og:description" content="Follow one traveler through five impossible worlds in a cinematic, scroll-driven experience." />
   <meta property="og:url" content="https://sioteyu.github.io/elsewhere/" />
-  <meta property="og:image" content="https://sioteyu.github.io/elsewhere/public/assets/worlds-sprite.avif" />
   <meta name="twitter:card" content="summary_large_image" />
   <title>Elsewhere — An Anime.js Parallax Story</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preload" as="image" href="./public/assets/worlds-sprite.avif" fetchpriority="high" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="icon" href="./public/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .chapter-ambient { background-image: linear-gradient(90deg, rgba(5,7,13,.94) 0%, rgba(5,7,13,.74) 36%, rgba(5,7,13,.35) 68%, rgba(5,7,13,.74) 100%), var(--world-sprite, none); }
+    .scene-image { background-image: var(--world-sprite, none); }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#origin">Skip to the story</a>
