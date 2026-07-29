@@ -1,0 +1,104 @@
+/* Final production polish: visual definition without adding a heavy image pipeline. */
+.chapter,
+.scene,
+.scene-frame,
+.chapter-ambient {
+  contain: paint;
+}
+
+.scene-frame {
+  isolation: isolate;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  box-shadow:
+    0 34px 90px rgba(0, 0, 0, 0.46),
+    0 0 0 1px color-mix(in srgb, var(--accent) 19%, transparent),
+    inset 0 0 70px rgba(2, 5, 12, 0.16);
+}
+
+.scene-image {
+  filter: saturate(1.1) contrast(1.09) brightness(1.025);
+  image-rendering: auto;
+  transform: translateZ(0) scale(1.025);
+  backface-visibility: hidden;
+}
+
+.scene-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 63% 33%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 31%),
+    linear-gradient(115deg, rgba(255,255,255,.045), transparent 26%, transparent 72%, rgba(0,0,0,.18));
+  mix-blend-mode: screen;
+  opacity: .74;
+}
+
+.scene-frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  opacity: .12;
+  background-image:
+    repeating-radial-gradient(circle at 17% 23%, rgba(255,255,255,.32) 0 .45px, transparent .65px 2.6px),
+    linear-gradient(180deg, transparent, rgba(0,0,0,.09));
+  background-size: 5px 5px, 100% 100%;
+  mix-blend-mode: soft-light;
+}
+
+.chapter-copy {
+  text-shadow: 0 2px 24px rgba(0,0,0,.42);
+}
+
+.chapter-title {
+  text-wrap: balance;
+  text-shadow: 0 3px 32px rgba(0,0,0,.42);
+}
+
+.chapter-body {
+  text-wrap: pretty;
+}
+
+.topbar.scrolled {
+  box-shadow: 0 18px 42px rgba(0,0,0,.2);
+}
+
+@supports (content-visibility: auto) {
+  .chapter:not(.chapter-0) {
+    content-visibility: auto;
+    contain-intrinsic-size: 100svh;
+  }
+}
+
+@media (max-width: 720px) {
+  .scene-frame {
+    box-shadow:
+      0 22px 55px rgba(0,0,0,.4),
+      0 0 0 1px color-mix(in srgb, var(--accent) 17%, transparent);
+  }
+
+  .scene-image {
+    filter: saturate(1.07) contrast(1.06) brightness(1.02);
+  }
+
+  .scene-frame::after {
+    opacity: .075;
+  }
+
+  .topbar {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-image,
+  .scene-frame,
+  .chapter-ambient {
+    transform: none !important;
+  }
+}
